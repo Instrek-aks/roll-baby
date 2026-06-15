@@ -10,16 +10,7 @@ function App() {
     window.location.href = "https://www.google.com";
   };
 
-  const joinList = () => {
-    var e = document.getElementById('email').value.trim();
-    if (!e || e.indexOf('@') < 1) {
-      document.getElementById('email').style.borderColor = '#c46';
-      return;
-    }
-    document.querySelector('.form').style.display = 'none';
-    document.querySelector('.form-note').style.display = 'none';
-    document.getElementById('formok').style.display = 'block';
-  };
+
 
   useEffect(() => {
     var io = new IntersectionObserver(function(en) {
@@ -92,7 +83,6 @@ function App() {
       <a href="#packaging">Packaging</a>
       <a href="#organic">Organic</a>
       <a href="#gallery">Gallery</a>
-      <a href="#store" className="nav-cta">Find a store</a>
     </nav>
     <button className="menu-btn" onclick="document.getElementById('navlinks').classList.toggle('open')" aria-label="Menu">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -108,10 +98,9 @@ function App() {
       <h1><span className="word" style={{animationDelay: '.05s'}}>Roll</span> <span className="word" style={{animationDelay: '.15s'}}>like</span><br/><span className="word" style={{animationDelay: '.25s'}}>you</span> <span className="word it" style={{animationDelay: '.35s'}}>mean</span> <span className="word" style={{animationDelay: '.45s'}}>it.</span></h1>
       <p className="hero-sub">Unbleached paper, a slow even burn, and a flawless cone every single time. The good stuff, made properly.</p>
       <div className="hero-cta">
-        <a href="#store" className="cta">Find a store
+        <a href="#cones" className="cta">Explore the cones
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="#cones" className="cta-ghost">Explore the cones</a>
       </div>
       <div className="hero-fine"><span>No heavy metals</span><span>No pesticides</span><span>Ultra thin</span></div>
     </div>
@@ -250,22 +239,7 @@ function App() {
   </div>
 </section>
 
-{/* SIGNUP */}
-<section className="signup" id="store">
-  <div className="wrap">
-    <div className="reveal">
-      <svg className="gmono" viewBox="0 0 100 100" style={{color: 'var(--bone)'}}><use href="#monogram"/></svg>
-      <h2>Find Roll Baby Roll near you.</h2>
-      <p>We are rolling out to stores and delivery across India. Drop your email and we will tell you the moment we land in your area.</p>
-      <div className="form">
-        <input type="email" id="email" placeholder="you@email.com" aria-label="Email address"/>
-        <button onClick={joinList}>Notify me</button>
-      </div>
-      <div className="form-note"><span className="lab">No spam, just the drop · 21+ only</span></div>
-      <div className="form-ok" id="formok">You are on the list. Watch your inbox.</div>
-    </div>
-  </div>
-</section>
+
 
 {/* FOOTER */}
 <footer>
@@ -277,12 +251,11 @@ function App() {
       </div>
       <div className="foot-cols">
         <div><h4>Product</h4><a href="#cones">The cones</a><a href="#packaging">Packaging</a><a href="#organic">Organic</a><a href="#standard">Our standard</a></div>
-        <div><h4>Brand</h4><a href="#gallery">Gallery</a><a href="#store">Find a store</a><a href="#store">Stockist enquiries</a></div>
-        <div><h4>Connect</h4><a href="#">Instagram</a><a href="#">WhatsApp</a><a href="#">Wholesale</a></div>
+        <div><h4>Connect</h4><a href="https://www.instagram.com/rollbabyroll.club?igsh=MW5qa2tscnRuanJiag%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" style={{display: 'inline-flex', alignItems: 'center', gap: '8px'}}><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram</a></div>
       </div>
     </div>
     <div className="foot-bot">
-      <span className="lab">© 2026 Roll Baby Roll · An Instrek venture</span>
+      <span className="lab">© 2026 Roll Baby Roll</span>
       <div style={{display: 'flex', alignItems: 'center', gap: '16px'}}><span className="lab">Roll responsibly</span><span className="badge21">21+</span></div>
     </div>
   </div>
